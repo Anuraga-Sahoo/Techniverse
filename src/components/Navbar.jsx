@@ -1,65 +1,78 @@
-import React, { useState } from 'react'
-import {Link} from "react-router-dom"
-import { FaBars } from "react-icons/fa";
-import { RxCross2 } from "react-icons/rx";
+"use client"
 
-const Navbar = () => {
-  const navItems = [
-    {name: 'Home', link: '/'},
-    {name: 'About', link: '/about'},
-    {name: 'Contact', link: '/contact'},
-    {name: 'Softwair', link: '/softwaire'},
-    {name: 'E commerce', link: '/ecommerce'}
-  ]
+import { Link } from "react-router-dom"
+import { useState } from "react"
 
-  const [click, setClick] = useState(false)
-  const showItems = () => {
-    setClick(!click)
-  }
+export default function Navbar() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+
   return (
-    <nav className='p-4 sm:p-4 sm:pl-10 sm:pr-10 shadow-md bg-white sticky top-0 w-[100%] flex items-center justify-between'>
-      <div className="left flex justify-start sm:justify-around sm:items-center w-[11rem]">
-        <img src="https://i.giphy.com/nVliit5etkoz4HU9fK.webp" alt="logo" 
-        className='bg-purple-500 h-11 w-11 rounded-md  '/>
-        <h2 className='hidden sm:block lg:block text-2xl font-medium ml-2'>Techniverse</h2>
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-black/50 backdrop-blur-md">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="flex justify-between items-center py-4">
+          <div className="flex items-center">
+            <Link to="/" className="text-white font-bold text-xl">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                <path d="M12 0L24 12L12 24L0 12L12 0ZM12 3.516L20.484 12L12 20.484L3.516 12L12 3.516Z" />
+              </svg>
+            </Link>
+          </div>
+
+          <div className="hidden md:flex items-center space-x-8">
+            <Link to="/" className="text-gray-300 hover:text-white transition-colors">
+              Start
+            </Link>
+            <Link to="/features" className="text-gray-300 hover:text-white transition-colors">
+              Features
+            </Link>
+            <Link to="/resources" className="text-gray-300 hover:text-white transition-colors">
+              Resources
+            </Link>
+            <Link to="/help" className="text-gray-300 hover:text-white transition-colors">
+              Help
+            </Link>
+            <Link to="/enterprise" className="text-gray-300 hover:text-white transition-colors">
+              Enterprise
+            </Link>
+            <Link to="/pricing" className="text-gray-300 hover:text-white transition-colors">
+              Pricing
+            </Link>
+          </div>
+
+          <button className="md:hidden text-white" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              {isMenuOpen ? <path d="M6 18L18 6M6 6l12 12" /> : <path d="M4 6h16M4 12h16M4 18h16" />}
+            </svg>
+          </button>
+        </div>
+
+        {/* Mobile menu */}
+        {isMenuOpen && (
+          <div className="md:hidden">
+            <div className="px-2 pt-2 pb-3 space-y-1">
+              <Link to="/" className="block px-3 py-2 text-gray-300 hover:text-white transition-colors">
+                Start
+              </Link>
+              <Link to="/features" className="block px-3 py-2 text-gray-300 hover:text-white transition-colors">
+                Features
+              </Link>
+              <Link to="/resources" className="block px-3 py-2 text-gray-300 hover:text-white transition-colors">
+                Resources
+              </Link>
+              <Link to="/help" className="block px-3 py-2 text-gray-300 hover:text-white transition-colors">
+                Help
+              </Link>
+              <Link to="/enterprise" className="block px-3 py-2 text-gray-300 hover:text-white transition-colors">
+                Enterprise
+              </Link>
+              <Link to="/pricing" className="block px-3 py-2 text-gray-300 hover:text-white transition-colors">
+                Pricing
+              </Link>
+            </div>
+          </div>
+        )}
       </div>
-      <FaBars onClick={showItems} className={` ${click ? "hidden" :'lg:hidden font-2xl text-[2rem]'}`}/>
-        <RxCross2 onClick={showItems} className={` ${click ? 'lg:hidden font-2xl text-[2rem]': "hidden" }`}/>
-        {
-          click && (
-            <div className="middle absolute flex flex-col justify-around w-[93%] bg-white top-[5rem] p-[2rem] lg:flex gap-6 ">
-        {
-          navItems.map((items, index) => {
-            return (
-          <Link to={items.link} key={index} className='hover:text-[#6b3feb] font-medium'>{items.name}</Link>
-        )
-          })
-        }
-       <div className="right flex mt-[2rem] gap-4">
-        <button className='bg-[#6b3feb] p-2 rounded-md w-[5rem] text-white font-semibold'>Login</button>
-        <button className='bg-[#99bc30] p-2 rounded-md w-[5rem] text-white font-semibold'>Sign up</button>
-      </div>
-      </div>
-      
-          )
-        }
-      <div className="hidden middle lg:flex gap-6 ">
-        {
-          navItems.map((items, index) => {
-            return (
-          <Link to={items.link} key={index} className='hover:text-[#6b3feb] font-medium'>{items.name}</Link>
-        )
-          })
-        }
-       
-      </div>
-      <div className="right hidden lg:flex gap-4">
-        <button className='bg-[#6b3feb] p-2 rounded-md w-[5rem] text-white font-semibold'>Login</button>
-        <button className='bg-green-600 p-2 rounded-md w-[5rem] text-white font-semibold'>Sign up</button>
-      </div>
-        
     </nav>
   )
 }
 
-export default Navbar
