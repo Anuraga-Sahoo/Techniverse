@@ -7,7 +7,7 @@ export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-black/50 backdrop-blur-md">
+    <nav className="sticky mb-10 top-0 left-0 right-0 z-50 bg-black/50 backdrop-blur-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex justify-between items-center py-4">
           <div className="flex items-center">
@@ -20,13 +20,13 @@ export default function Navbar() {
 
           <div className="hidden md:flex items-center space-x-8">
             <Link to="/" className="text-gray-300 hover:text-white transition-colors">
-              Start
+              Home
             </Link>
-            <Link to="/features" className="text-gray-300 hover:text-white transition-colors">
-              Features
+            <Link to="/3D" className="text-gray-300 hover:text-white transition-colors">
+              3D
             </Link>
-            <Link to="/resources" className="text-gray-300 hover:text-white transition-colors">
-              Resources
+            <Link to="/blog" className="text-gray-300 hover:text-white transition-colors">
+              blog
             </Link>
             <Link to="/help" className="text-gray-300 hover:text-white transition-colors">
               Help
@@ -53,8 +53,8 @@ export default function Navbar() {
               <Link to="/" className="block px-3 py-2 text-gray-300 hover:text-white transition-colors">
                 Start
               </Link>
-              <Link to="/features" className="block px-3 py-2 text-gray-300 hover:text-white transition-colors">
-                Features
+              <Link to="/blog" className="block px-3 py-2 text-gray-300 hover:text-white transition-colors">
+                Blog
               </Link>
               <Link to="/resources" className="block px-3 py-2 text-gray-300 hover:text-white transition-colors">
                 Resources

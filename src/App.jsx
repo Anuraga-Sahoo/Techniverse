@@ -36,6 +36,7 @@ import Layout from "./components/Layout"
 // import Enterprise from "./pages/Enterprise"
 // import Pricing from "./pages/Pricing"
 import Home from "./Pages/Home"
+import Blog from "./Pages/Blog"
 
 export default function App() {
   return (
@@ -43,7 +44,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home/>} />
-          {/* <Route path="features" element={<Features />} /> */}
+          <Route path="blog" element={<Blog/>} />
           {/* <Route path="resources" element={<Resources />} /> */}
           {/* <Route path="help" element={<Help />} /> */}
           {/* <Route path="enterprise" element={<Enterprise />} /> */}
