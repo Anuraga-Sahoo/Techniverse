@@ -49,7 +49,7 @@ const Blog = () => {
         </div>
 
         {/* Blog Cards Grid */}
-        <div className='text-white p-4 sm:p-8 w-full'>
+        <div className='text-white sm:p-8 w-full '>
           <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6'>
             {Blogs.map((blog, index) => (
               <div
