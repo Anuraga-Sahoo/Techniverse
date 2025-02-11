@@ -25,7 +25,7 @@ export default function Navbar() {
             <Link to="/3D" className="text-gray-300 hover:text-white transition-colors">
               3D
             </Link>
-            <Link to="blog" className="text-gray-300 hover:text-white transition-colors">
+            <Link to="/blog" className="text-gray-300 hover:text-white transition-colors">
               blog
             </Link>
             <Link to="/help" className="text-gray-300 hover:text-white transition-colors">

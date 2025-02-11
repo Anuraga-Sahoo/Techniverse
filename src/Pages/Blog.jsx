@@ -49,13 +49,13 @@ const Blog = () => {
         </div>
 
         {/* Blog Cards Grid */}
-        <div className='text-white sm:p-8 w-full '>
-          <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6'>
+        <div className='text-white sm:p-8 w-full'>
+          <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-[5rem]'>
             {Blogs.map((blog, index) => (
               <div
                 key={index}
                 onClick={() => console.log('clicked', index)}
-                className="flex flex-col bg-gray-950 text-white rounded-md shadow-2xl shadow-indigo-950 cursor-pointer hover:scale-[1.05] transition-transform"
+                className="flex flex-col bg-gray-950 text-white rounded-md shadow-2xl shadow-indigo-950 cursor-pointer hover:scale-[1.05] transition-transform p-4"
               >
                 <div>
                   <img src={blog.image} alt="blog" className='w-full h-48 object-cover rounded-t-md' />
