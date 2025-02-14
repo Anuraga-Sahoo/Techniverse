@@ -5,7 +5,7 @@ const ContactBanner = () => {
     <div className='w-full relative'>
       <div className='w-full flex justify-center items-center'>
         <img 
-          src="\public\contact-us-2993109_1280.jpg" 
+          src="\contact-us-2993109_1280.jpg" 
           alt="Contact banner" 
           className='w-full md:w-[90%] h-[40vh] md:h-[50vh] lg:h-[60vh] object-cover rounded-none md:rounded-md'
         />
