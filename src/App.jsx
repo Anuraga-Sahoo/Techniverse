@@ -38,6 +38,7 @@ import Layout from "./components/Layout"
 import Home from "./Pages/Home"
 import Blog from "./Pages/Blog"
 import Help from "./Pages/Help"
+import Pricing from "./Pages/Pricing"
 
 export default function App() {
   return (
@@ -49,7 +50,7 @@ export default function App() {
           {/* <Route path="resources" element={<Resources />} /> */}
           <Route path="help" element={<Help/>} />
           {/* <Route path="enterprise" element={<Enterprise />} /> */}
-          {/* <Route path="pricing" element={<Pricing />} /> */}
+          <Route path="pricing" element={<Pricing/>} />
         </Route>
       </Routes>
     </Router>
