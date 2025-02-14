@@ -37,6 +37,7 @@ import Layout from "./components/Layout"
 // import Pricing from "./pages/Pricing"
 import Home from "./Pages/Home"
 import Blog from "./Pages/Blog"
+import Help from "./Pages/Help"
 
 export default function App() {
   return (
@@ -46,7 +47,7 @@ export default function App() {
           <Route index element={<Home/>} />
           <Route path="blog" element={<Blog/>} />
           {/* <Route path="resources" element={<Resources />} /> */}
-          {/* <Route path="help" element={<Help />} /> */}
+          <Route path="help" element={<Help/>} />
           {/* <Route path="enterprise" element={<Enterprise />} /> */}
           {/* <Route path="pricing" element={<Pricing />} /> */}
         </Route>
